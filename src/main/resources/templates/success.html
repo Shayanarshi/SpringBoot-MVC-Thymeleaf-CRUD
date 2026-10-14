@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Success | Employee Management</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #eef2ff, #f8fafc);
+            color: #1e293b;
+        }
+
+        .success-card {
+            width: 100%;
+            max-width: 500px;
+            padding: 45px 35px;
+            text-align: center;
+            background: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 15px 45px rgba(15, 23, 42, 0.10);
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 22px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #dcfce7;
+            color: #15803d;
+            border-radius: 50%;
+            font-size: 42px;
+        }
+
+        h1 {
+            font-size: 27px;
+            color: #0f172a;
+            margin-bottom: 12px;
+        }
+
+        .message {
+            font-size: 16px;
+            color: #15803d;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .actions {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn {
+            display: block;
+            padding: 13px 18px;
+            border-radius: 9px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .home-btn {
+            background: #1d4ed8;
+            color: #ffffff;
+        }
+
+        .home-btn:hover {
+            background: #1e40af;
+            transform: translateY(-2px);
+        }
+
+        .add-btn {
+            background: #15803d;
+            color: #ffffff;
+        }
+
+        .add-btn:hover {
+            background: #166534;
+            transform: translateY(-2px);
+        }
+
+        .read-btn {
+            background: #f1f5f9;
+            color: #334155;
+            border: 1px solid #e2e8f0;
+        }
+
+        .read-btn:hover {
+            background: #e2e8f0;
+        }
+
+        @media (max-width: 480px) {
+            .success-card {
+                padding: 32px 22px;
+            }
+
+            h1 {
+                font-size: 23px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="success-card">
+
+    <div class="success-icon">✓</div>
+
+    <h1>Operation Successful!</h1>
+
+    <p class="message" th:text="${message}">
+        Employee operation completed successfully.
+    </p>
+
+    <div class="actions">
+
+        <a class="btn home-btn" th:href="@{/}">
+            ← Back to Home
+        </a>
+
+        <a class="btn add-btn" th:href="@{/add}">
+            + Add Another Employee
+        </a>
+
+        <a class="btn read-btn" th:href="@{/read}">
+            View All Employees
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>
